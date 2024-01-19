@@ -72,10 +72,11 @@
                             <td>{{ data.Address}}</td>
                             <td>{{ data.Email}}</td>
                             <td>{{ data.Contact}}</td>
+                            <td><a class="btn btn-success" href="updateData/{{data.id}}">Update</a></td>
                             
                         </tr>
                     </tbody>
-
+                    
                     {% endfor %}
             </table>
             {% endif %}

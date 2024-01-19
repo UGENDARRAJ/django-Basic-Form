@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Datas
 # Create your views here.
@@ -25,9 +25,9 @@ def addData(request):
         obj.Email=email
         obj.save()
         mydata = Datas.objects.all()
-        return render(request,'home.html',{'datas':mydata})
+        return redirect('home')
     return render(request,'home.html')
 
-def updateData(request):
-    
-    return render(request, 'update.html')
+def updateData(request, id):
+    mydata=Datas.objects.get(id=id)
+    return render(request, 'update.html', {'data':mydata})

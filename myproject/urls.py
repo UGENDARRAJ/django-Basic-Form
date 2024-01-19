@@ -22,4 +22,5 @@ urlpatterns = [
     path('',views.home),
     path('admin/',admin.site.urls),
     path('addData',views.addData, name="addData"),
+    path('updateData/<int:id>',views.updateData, name="updateData"),
 ]
